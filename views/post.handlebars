@@ -1,0 +1,53 @@
+{{!-- NAV PARTIAL --}}
+<div class="nav">
+  {{>nav}}
+</div>
+<br><br>
+
+
+{{!-- Create and Submit Post Form --}}
+<div id="create-post">
+
+  {{!-- Header Welcome User --}}
+  {{>welcome}}
+
+  {{!-- Body --}}
+  <div class="container">
+    <div class="row">
+
+      {{!-- Enter Post Form --}}
+      <div class="col-8 offset-2">
+        <h3 class="text-center topPost">Share Your Thoughts</h3>
+        <form class="clearfix mb-4 mt-4" action="POST">
+          <div class="form-group mb-4">
+            <label class="text-light" for="post-text">Title</label>
+            <input type="text" id="post-text" class="form-control" aria-describedby="post-text"
+              placeholder="Post Title">
+          </div>
+          <div class="form-group mb-4">
+            <label class="text-light" for="post-description">Content</label>
+            <textarea class="form-control" id="post-description" rows="10" aria-describedby="post-description"
+              placeholder="Post Content"></textarea>
+          </div>
+          <div class="form-group mb-4">
+            <label class="text-light" for="post-category">Category</label>
+            <select class="form-control" id="post-category">
+              {{#each categories}}
+              <option value="{{this.category}}">{{this.category}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <button id="submit" class="btn btn-primary float-right">Submit</button>
+        </form>
+      </div>
+      {{!-- End Enter Post Form --}}
+    </div>
+  </div>
+  {{!-- End Body --}}
+</div>
+
+<link rel="stylesheet" href="/styles/sidenav.css" media="screen" title="no title" charset="utf-8">
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/sidenav.js"></script>
+<script src="/js/post.js"></script>
